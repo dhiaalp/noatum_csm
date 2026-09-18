@@ -7,11 +7,16 @@ import { Terminals } from './src/collections/Terminals'
 import { SiteContent } from './src/collections/SiteContent'
 import { Media } from './src/collections/Media'
 export default buildConfig({
+  serverURL: process.env.CMS_URL || 'http://localhost:3001',
   admin: { user: Users.slug },
   collections: [Users, News, Terminals, SiteContent, Media],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
-  db: postgresAdapter({ pool: { connectionString: process.env.DATABASE_URI } }),
+  db: postgresAdapter({
+    pool: { connectionString: process.env.DATABASE_URI || process.env.DATABASE_URL },
+    push: process.env.NODE_ENV !== 'production',
+    migrationDir: './src/migrations',
+  }),
   // Allow the public site (a different origin in dev) to read the admin's
   // session cookie and make authenticated write requests for the front-end
   // click-to-edit feature. The CMS's own origin must be listed too —

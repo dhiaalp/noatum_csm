@@ -11,7 +11,7 @@ export const Media: CollectionConfig = {
   admin: { useAsTitle: 'filename' },
   access: { read: () => true },
   upload: {
-    staticDir: 'media',
+    staticDir: process.env.MEDIA_DIR || 'media',
     mimeTypes: ['image/*', 'video/*'],
   },
   fields: [{ name: 'alt', type: 'text' }],
