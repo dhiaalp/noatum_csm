@@ -23,4 +23,6 @@ Use `.env.railway.example` in the CMS service's Variables → Raw Editor. These 
 
 The initial migration targets an empty database. Existing databases created using development schema push need a separate baseline/import plan; do not apply the initial migration blindly to them. Existing local content is not copied by a Git push.
 
+To apply the curated Safaga photography to a deployed CMS database, run `npm run update:safaga` with that service's `DATABASE_URI` and `PAYLOAD_SECRET` variables. The referenced media paths are served by the frontend service, so deploy the frontend assets first.
+
 For later schema changes, run `npm run migrate:create -- descriptive-name`, review and commit the generated migration. `/health` checks the HTTP server; verify `/api/news` and `/admin` after deployment to check the database integration too.

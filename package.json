@@ -8,6 +8,7 @@
     "payload": "payload",
     "migrate": "payload migrate",
     "migrate:create": "payload migrate:create",
+    "update:safaga": "tsx scripts/update-safaga.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "sharp": "0.35.4"
   },
   "devDependencies": {
+    "tsx": "^4.23.2",
     "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
