@@ -9,6 +9,7 @@
     "migrate": "payload migrate",
     "migrate:create": "payload migrate:create",
     "update:safaga": "tsx scripts/update-safaga.ts",
+    "update:karachi-kgtl": "tsx scripts/update-karachi-kgtl.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
