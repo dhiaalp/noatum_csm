@@ -26,7 +26,7 @@ async function main() {
     data: {
       image: gallery[0].image,
       bannerImage: gallery[0].image,
-      heroVideo: '/videos/terminals/safaga-terminal/operations-timelapse.mp4',
+      heroVideo: '/videos/terminals/safaga-terminal/hero.mp4',
       blurb: "A strategic multipurpose gateway on Egypt's Red Sea coast, connecting regional and international trade through modern cargo-handling infrastructure.",
       description: "Safaga Terminal connects Egypt's Red Sea trade corridor to global markets with efficient ship-to-shore operations, container handling, and round-the-clock terminal capability.",
       gallery,
