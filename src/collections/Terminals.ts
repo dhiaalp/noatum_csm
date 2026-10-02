@@ -66,7 +66,6 @@ export const Terminals: CollectionConfig = {
         { label: 'Breakbulk & Project Cargo', value: 'breakbulk-and-project-cargo' },
         { label: 'Dry Bulk Services', value: 'dry-bulk-services' },
         { label: 'Warehousing Solutions', value: 'warehousing-solutions' },
-        { label: 'Cold Chain Logistics', value: 'cold-chain-logistics' },
       ],
     },
     {
