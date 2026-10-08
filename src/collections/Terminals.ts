@@ -53,6 +53,21 @@ export const Terminals: CollectionConfig = {
             { name: 'reeferPlugs', type: 'text', admin: { description: 'e.g. "1 unit"', width: '25%' } },
           ],
         },
+        {
+          name: 'facilities',
+          type: 'text',
+          admin: { description: 'Comma-separated, e.g. "Container Freight Station, Grain Silos"' },
+        },
+        {
+          name: 'connectivity',
+          type: 'text',
+          admin: { description: 'Comma-separated, e.g. "Rail Connected"' },
+        },
+        {
+          name: 'expansion',
+          type: 'text',
+          admin: { description: 'Comma-separated planned upgrades, e.g. "Water Depth 15 m, Additional Quay Length 100 m"' },
+        },
       ],
     },
     {
