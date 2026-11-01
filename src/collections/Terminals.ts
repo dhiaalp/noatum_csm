@@ -47,10 +47,12 @@ export const Terminals: CollectionConfig = {
         {
           type: 'row',
           fields: [
-            { name: 'stsCranes', type: 'text', admin: { description: 'e.g. "4 units"', width: '25%' } },
-            { name: 'mobileCranes', type: 'text', admin: { description: 'e.g. "1 unit"', width: '25%' } },
-            { name: 'rtgCranes', type: 'text', admin: { description: 'e.g. "1 unit"', width: '25%' } },
-            { name: 'reeferPlugs', type: 'text', admin: { description: 'e.g. "1 unit"', width: '25%' } },
+            { name: 'stsCranes', type: 'text', admin: { description: 'e.g. "4 units"', width: '20%' } },
+            { name: 'mobileCranes', type: 'text', admin: { description: 'e.g. "1 unit"', width: '20%' } },
+            { name: 'rtgCranes', type: 'text', admin: { description: 'e.g. "1 unit"', width: '20%' } },
+            { name: 'reeferPlugs', type: 'text', admin: { description: 'e.g. "1 unit"', width: '20%' } },
+            { name: 'shipLoaders', type: 'text', admin: { description: 'e.g. "3 units"', width: '20%' } },
+            { name: 'reachStackers', type: 'text', admin: { description: 'e.g. "3 units"', width: '20%' } },
           ],
         },
         {

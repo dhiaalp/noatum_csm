@@ -1,12 +1,15 @@
 import { getPayload } from 'payload'
 import config from '../payload.config'
 
-const gallery = [
-  { image: '/images/terminals/malaga-terminal/hero-quay.webp', caption: 'Noatum Ports Malaga Terminal quay' },
-  { image: '/images/terminals/malaga-terminal/container-handling.webp', caption: 'Container handling in Malaga' },
-  { image: '/images/terminals/malaga-terminal/crane-spreader.webp', caption: 'Crane and spreader operations' },
-  { image: '/images/terminals/malaga-terminal/waterside-terminal.webp', caption: 'Malaga terminal waterside view' },
-  { image: '/images/terminals/malaga-terminal/night-operations.webp', caption: 'Malaga terminal night operations' },
+const dir = '/images/terminals/malaga-terminal/'
+const gallery: [string, string][] = [
+  ['aerial-vessel-arriving', 'Aerial view of a vessel entering Malaga port'],
+  ['rtg-container-lift', 'RTG gantry lifting a container'],
+  ['reefer-stacks', 'Reefer container stacks'],
+  ['container-yard', 'Container yard with STS cranes'],
+  ['noatum-crane-detail', 'Noatum Ports crane at Malaga'],
+  ['sts-cranes', 'Twin ship-to-shore cranes'],
+  ['vessel-at-sea', 'Container vessel arriving at Malaga'],
 ]
 
 async function main() {
@@ -18,7 +21,12 @@ async function main() {
   await payload.update({
     collection: 'terminals',
     id: terminal.id,
-    data: { image: gallery[0].image, bannerImage: gallery[0].image, gallery },
+    data: {
+      image: `${dir}vessel-at-berth.webp`,
+      bannerImage: `${dir}aerial-quay-overview.webp`,
+      terminalDetails: { ...(terminal.terminalDetails ?? {}), overviewImage: `${dir}vessel-at-berth.webp` },
+      gallery: gallery.map(([name, caption]) => ({ image: `${dir}${name}.webp`, caption })),
+    },
   })
   console.log(`Updated Malaga terminal ${terminal.id}`)
   await payload.destroy()
