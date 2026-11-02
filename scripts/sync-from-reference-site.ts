@@ -36,7 +36,7 @@ async function main() {
     if (existing.docs[0]) {
       await payload.update({ collection: 'site-content', id: existing.docs[0].id, data: { value } })
     } else {
-      await payload.create({ collection: 'site-content', data: { key, value } })
+      await payload.create({ collection: 'site-content', data: { key, type: 'text', value } })
     }
     console.log(`site-content ${key}`)
   }
